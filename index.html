@@ -8,17 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      /* Deep charcoal backgrounds */
-      --bg: #0a0e14;
-      --surface: #12161f;
-      --surface2: #1a202c;
-      /* Terminal green accents */
-      --border: rgba(0, 255, 65, 0.15);
-      --accent: #00ff41;
-      --accent2: #008f11;
+      /* Deep black backgrounds */
+      --bg: #050505;
+      --surface: #0f0f0f;
+      --surface2: #1a1a1a;
+      /* Crimson red accents */
+      --border: rgba(255, 0, 50, 0.2);
+      --accent: #ff0032;
+      --accent2: #cc0028;
       --accent3: #ffffff;
-      --text: #e0e6ed;
-      --muted: #8b949e;
+      --text: #e0e0e0;
+      --muted: #8b8b8b;
       --heading-font: 'Inter', sans-serif;
       --mono-font: 'JetBrains Mono', monospace;
       --body-font: 'Inter', sans-serif;
@@ -57,8 +57,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255,0,50,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,50,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
@@ -75,7 +75,7 @@
       align-items: center;
       justify-content: space-between;
       backdrop-filter: blur(20px);
-      background: rgba(10, 14, 20, 0.85);
+      background: rgba(5, 5, 5, 0.85);
       border-bottom: 1px solid var(--border);
       transition: padding 0.3s;
     }
@@ -135,7 +135,7 @@
       width: 700px;
       height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,255,65,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,0,50,0.08) 0%, transparent 70%);
       top: -200px;
       right: -200px;
       pointer-events: none;
@@ -146,7 +146,7 @@
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,143,17,0.05) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(200,0,40,0.05) 0%, transparent 70%);
       bottom: -100px;
       left: -100px;
       pointer-events: none;
@@ -244,8 +244,9 @@
 
     .btn-primary:hover {
       background: #fff;
+      color: var(--bg);
       transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0,255,65,0.3);
+      box-shadow: 0 0 30px rgba(255,0,50,0.3);
     }
 
     .btn-outline {
@@ -269,7 +270,7 @@
 
     .btn-outline:hover {
       border-color: var(--accent);
-      background: rgba(0,255,65,0.06);
+      background: rgba(255,0,50,0.06);
       transform: translateY(-2px);
     }
 
@@ -337,101 +338,6 @@
       height: 100%;
       background: var(--accent);
       animation: scanLine 2s ease infinite;
-    }
-
-    /* ── FEATURED CERTS (GLASSMORPHISM) ── */
-    .featured-certs-section {
-      position: relative;
-      z-index: 10;
-      margin-top: -60px;
-      padding: 0 48px;
-      display: flex;
-      justify-content: center;
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards 1s;
-    }
-
-    .featured-certs-wrap {
-      max-width: 1100px;
-      width: 100%;
-      background: rgba(18, 22, 31, 0.6);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    .featured-title {
-      font-family: var(--heading-font);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.3;
-      max-width: 150px;
-    }
-
-    .featured-cards {
-      display: flex;
-      gap: 20px;
-      flex: 1;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-    }
-
-    .feat-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding: 12px 18px;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      flex: 1;
-      min-width: 250px;
-      max-width: 320px;
-    }
-
-    .feat-card:hover {
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-4px);
-      border-color: var(--border);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-
-    .feat-badge-img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
-    }
-
-    .feat-info {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .feat-info h4 {
-      font-family: var(--heading-font);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.2;
-    }
-
-    .feat-info span {
-      font-family: var(--mono-font);
-      font-size: 0.7rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     /* ── SECTIONS ── */
@@ -554,14 +460,14 @@
     .skill-pill:hover {
       border-color: var(--accent);
       color: var(--accent);
-      background: rgba(0,255,65,0.05);
+      background: rgba(255,0,50,0.05);
       transform: translateY(-2px);
     }
 
     .skill-pill.highlight {
-      border-color: rgba(0,255,65,0.3);
+      border-color: rgba(255,0,50,0.3);
       color: var(--accent);
-      background: rgba(0,255,65,0.06);
+      background: rgba(255,0,50,0.06);
     }
 
     .skills-group {
@@ -675,8 +581,8 @@
       font-family: var(--mono-font);
       font-size: 0.68rem;
       letter-spacing: 0.1em;
-      background: rgba(0,255,65,0.06);
-      border: 1px solid rgba(0,255,65,0.15);
+      background: rgba(255,0,50,0.06);
+      border: 1px solid rgba(255,0,50,0.15);
       color: var(--accent);
     }
 
@@ -723,7 +629,7 @@
 
     .project-card:hover::before { transform: scaleX(1); }
     .project-card:hover {
-      border-color: rgba(0,255,65,0.25);
+      border-color: rgba(255,0,50,0.25);
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
@@ -783,7 +689,7 @@
     .cf-btn{padding:7px 18px;font-family:var(--mono-font);font-size:.72rem;letter-spacing:.1em;
       text-transform:uppercase;background:var(--surface2);border:1px solid var(--border);
       color:var(--muted);cursor:pointer;transition:all .2s; font-weight: 600;}
-    .cf-btn.active,.cf-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,255,65,.06)}
+    .cf-btn.active,.cf-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(255,0,50,.06)}
 
     .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
     
@@ -802,30 +708,30 @@
     
     .cert-card.visible{opacity:1;transform:translateY(0)}
     .cert-card:hover{
-      border-color: rgba(0,255,65,0.4);
+      border-color: rgba(255,0,50,0.4);
       transform: translateY(-5px);
       box-shadow: 0 24px 48px rgba(0,0,0,0.6);
     }
     .cert-card:hover .cert-img-wrap img{transform:scale(1.04)}
     
-    .cert-img-wrap{position:relative;overflow:hidden;height:190px;background:#06080c; border-bottom: 1px solid var(--border);}
+    .cert-img-wrap{position:relative;overflow:hidden;height:190px;background:#050505; border-bottom: 1px solid var(--border);}
     .cert-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;
       transition:transform .4s ease;filter:brightness(.85)}
     .cert-img-wrap::after{content:'';position:absolute;inset:0;
-      background:linear-gradient(to bottom,transparent 40%,rgba(10,14,20,.98) 100%);pointer-events:none}
+      background:linear-gradient(to bottom,transparent 40%,rgba(15,15,15,.98) 100%);pointer-events:none}
       
     .cert-badge-row{position:absolute;top:14px;left:14px;right:14px;display:flex;
       justify-content:space-between;align-items:flex-start;z-index:2}
       
     .cert-cat-badge{font-family:var(--mono-font);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
-      padding:4px 10px;background:#111823;border:none;color:var(--accent); font-weight: 600;}
+      padding:4px 10px;background:#111111;border:none;color:var(--accent); font-weight: 600;}
       
     .cert-verified{font-family:var(--mono-font);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
-      padding:4px 10px;background:rgba(0,255,65,.15);border:1px solid rgba(0,255,65,.3);color:var(--accent);
+      padding:4px 10px;background:rgba(255,0,50,.15);border:1px solid rgba(255,0,50,.3);color:var(--accent);
       display:flex;align-items:center;gap:4px; font-weight: 600;}
       
     .cert-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      opacity:0;background:rgba(0,255,65,.05);transition:opacity .3s;z-index:3}
+      opacity:0;background:rgba(255,0,50,.05);transition:opacity .3s;z-index:3}
     .cert-card:hover .cert-zoom{opacity:1}
     .cert-zoom svg{color:var(--accent);filter:drop-shadow(0 0 10px var(--accent))}
     
@@ -853,18 +759,18 @@
       height: 32px; 
       color: var(--accent); 
       flex-shrink: 0; 
-      filter: drop-shadow(0 0 8px rgba(0,255,65,0.4)); 
+      filter: drop-shadow(0 0 8px rgba(255,0,50,0.4)); 
     }
 
     /* LIGHTBOX */
-    .lightbox{position:fixed;inset:0;background:rgba(4,7,13,.95);z-index:500;
+    .lightbox{position:fixed;inset:0;background:rgba(5,5,5,.95);z-index:500;
       display:flex;align-items:center;justify-content:center;padding:24px;
       opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(14px)}
     .lightbox.open{opacity:1;pointer-events:all}
     .lb-inner{position:relative;max-width:900px;width:100%;max-height:90vh;
       display:flex;flex-direction:column;gap:16px}
     .lb-inner img{width:100%;max-height:75vh;object-fit:contain;border:1px solid var(--border);
-      box-shadow:0 0 80px rgba(0,255,65,.1)}
+      box-shadow:0 0 80px rgba(255,0,50,.15)}
     .lb-bar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
     .lb-title{font-family:var(--heading-font);font-size:1.1rem;font-weight:700}
     .lb-meta{font-family:var(--mono-font);font-size:.75rem;color:var(--muted);margin-top:4px}
@@ -874,8 +780,8 @@
     .lb-close:hover{border-color:var(--accent);color:var(--accent)}
     .lb-verify{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono-font);
       font-size:.72rem;color:var(--accent);text-decoration:none;letter-spacing:.08em;
-      padding:8px 16px;border:1px solid rgba(0,255,65,.3);transition:all .2s; font-weight: 600;}
-    .lb-verify:hover{background:rgba(0,255,65,.08);border-color:var(--accent)}
+      padding:8px 16px;border:1px solid rgba(255,0,50,.3);transition:all .2s; font-weight: 600;}
+    .lb-verify:hover{background:rgba(255,0,50,.08);border-color:var(--accent)}
 
     /* ── CONTACT ── */
     #contact {
@@ -996,11 +902,6 @@
       .hero-stats { display: none; }
       .scroll-hint { left: 24px; }
       
-      .featured-certs-section { margin-top: -30px; padding: 0 24px; }
-      .featured-certs-wrap { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
-      .featured-cards { flex-wrap: wrap; justify-content: flex-start; }
-      .feat-card { min-width: 100%; }
-
       .section-wrap { padding: 80px 24px; }
 
       .about-grid,
@@ -1073,40 +974,6 @@
     <div class="scroll-hint">
       <div class="scroll-line"></div>
       Scroll to explore
-    </div>
-  </section>
-
-  <!-- FEATURED CERTS -->
-  <section id="featured-certs" class="featured-certs-section">
-    <div class="featured-certs-wrap">
-      <h3 class="featured-title">Featured Credentials</h3>
-      <div class="featured-cards">
-        
-        <div class="feat-card">
-          <img src="assets/linux_badge.png" alt="Linux Foundation Badge" class="feat-badge-img">
-          <div class="feat-info">
-            <h4>Fundamentals of Quantum Computing</h4>
-            <span>The Linux Foundation</span>
-          </div>
-        </div>
-        
-        <div class="feat-card">
-          <img src="assets/data-science-methodologies_2.png" alt="IBM Data Science Badge" class="feat-badge-img">
-          <div class="feat-info">
-            <h4>Data Science Methodologies</h4>
-            <span>IBM</span>
-          </div>
-        </div>
-        
-        <div class="feat-card">
-          <img src="assets/python_ds_badge.png" alt="IBM Python Badge" class="feat-badge-img">
-          <div class="feat-info">
-            <h4>Python for Data Science</h4>
-            <span>IBM</span>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -1346,7 +1213,7 @@
           </a>
         </div>
 
-        <div class="project-card visible">
+        <!-- <div class="project-card visible">
           <div class="project-type">Frontend</div>
           <div class="project-name">Frontend Adventures</div>
           <div class="project-desc">
@@ -1362,7 +1229,7 @@
             Visit Site
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -1388,7 +1255,7 @@
       <div class="cert-grid" id="certGrid">
         
         <!-- IBM DS0103EN: Data Science Methodology -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM / Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
+        <div class="cert-card visible" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM | Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
           <div class="cert-img-wrap">
             <img src="assets/IBM_DSM-1.png" alt="IBM DS0103EN: Data Science Methodology" loading="lazy"/>
             <div class="cert-badge-row">
@@ -1398,12 +1265,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM / Cognitive Class</div>
-              <div class="cert-title">IBM DS0103EN: Data Science Methodology</div>
-              <div class="cert-meta">Aug 25, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">IBM | Cognitive Class</div>
+                <div class="cert-title">IBM DS0103EN: Data Science Methodology</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Aug 25, 2023</div>
           </div>
         </div>
 
@@ -1417,12 +1286,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">The Linux Foundation</div>
-              <div class="cert-title">Fundamentals of Quantum Computing</div>
-              <div class="cert-meta">Mar 05, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">The Linux Foundation</div>
+                <div class="cert-title">Fundamentals of Quantum Computing</div>
+              </div>
+              <img src="assets/linux_badge.png" class="cert-badge-icon" alt="Linux Foundation Badge"/>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Mar 05, 2023</div>
           </div>
         </div>
 
@@ -1436,12 +1307,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">MHRD / AICTE</div>
-              <div class="cert-title">Smart India Hackathon 2018</div>
-              <div class="cert-meta">Jun 18-22, 2018</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">MHRD / AICTE</div>
+                <div class="cert-title">Smart India Hackathon 2018</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Jun 18-22, 2018</div>
           </div>
         </div>
 
@@ -1456,17 +1329,19 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM</div>
-              <div class="cert-title">Python for Data Science</div>
-              <div class="cert-meta">Aug 20, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">IBM</div>
+                <div class="cert-title">Python for Data Science</div>
+              </div>
+              <img src="assets/python_ds_badge.png" class="cert-badge-icon" alt="Python Data Science Badge"/>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Aug 20, 2023</div>
           </div>
         </div>
 
         <!-- IBM PY0101EN: Python 101 for Data Science -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="IBM PY0101EN: Python 101 for Data Science" data-issuer="IBM / Cognitive Class" data-date="August 20, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/0b74e4ca1ddc4264896d0a0e4d8c9679">
+        <div class="cert-card visible" data-cat="data ibm" data-title="IBM PY0101EN: Python 101 for Data Science" data-issuer="IBM | Cognitive Class" data-date="August 20, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/0b74e4ca1ddc4264896d0a0e4d8c9679">
           <div class="cert-img-wrap">
             <img src="assets/IBM_DS-1.png" alt="IBM PY0101EN: Python 101 for Data Science" loading="lazy"/>
             <div class="cert-badge-row">
@@ -1476,12 +1351,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM / Cognitive Class</div>
-              <div class="cert-title">IBM PY0101EN: Python 101</div>
-              <div class="cert-meta">Aug 20, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">IBM | Cognitive Class</div>
+                <div class="cert-title">IBM PY0101EN: Python 101</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Aug 20, 2023</div>
           </div>
         </div>
 
@@ -1495,12 +1372,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Pro5.ai</div>
-              <div class="cert-title">Data Engineer Certificate</div>
-              <div class="cert-meta">Apr 2024</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">Pro5.ai</div>
+                <div class="cert-title">Data Engineer Certificate</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Apr 2024</div>
           </div>
         </div>
 
@@ -1515,12 +1394,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM</div>
-              <div class="cert-title">Data Science Methodologies</div>
-              <div class="cert-meta">Aug 25, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">IBM</div>
+                <div class="cert-title">Data Science Methodologies</div>
+              </div>
+              <img src="assets/data-science-methodologies.png" class="cert-badge-icon" alt="Data Science Methodologies Badge"/>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Aug 25, 2023</div>
           </div>
         </div>
 
@@ -1534,19 +1415,21 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Microsoft / Koenig</div>
-              <div class="cert-title">Dashboard In A Day</div>
-              <div class="cert-meta">Jul 25, 2024</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">Microsoft / Koenig</div>
+                <div class="cert-title">Dashboard In A Day</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Jul 25, 2024</div>
           </div>
         </div>
 
         <!-- Machine Learning Capstone -->
         <div class="cert-card visible" data-cat="data ibm coursera" data-title="Machine Learning Capstone" data-issuer="IBM / Coursera" data-date="December 23, 2023" data-verify="https://coursera.org/verify/SYZSNSGAZ4P3">
           <div class="cert-img-wrap">
-            <img src="assets/machine_learning_capstone.jpg" alt="Machine Learning Capstone" loading="lazy"/>
+            <img src="assets/machine_learning_capstone.png" alt="Machine Learning Capstone" loading="lazy"/>
             <div class="cert-badge-row">
               <span class="cert-cat-badge">Data</span>
               <span class="cert-verified">&#10003; VERIFIED</span>
@@ -1554,19 +1437,21 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM / Coursera</div>
-              <div class="cert-title">Machine Learning Capstone</div>
-              <div class="cert-meta">Dec 23, 2023</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">IBM / Coursera</div>
+                <div class="cert-title">Machine Learning Capstone</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Dec 23, 2023</div>
           </div>
         </div>
 
         <!-- Data Warehouse Concepts, Design, and Data Integration -->
         <div class="cert-card visible" data-cat="data coursera" data-title="Data Warehouse Concepts, Design, and Data Integration" data-issuer="University of Colorado / Coursera" data-date="November 20, 2025" data-verify="https://coursera.org/verify/RE2ZRM0IGB59">
           <div class="cert-img-wrap">
-            <img src="assets/data_warehouse_concepts.jpg" alt="Data Warehouse Concepts, Design, and Data Integration" loading="lazy"/>
+            <img src="assets/data_warehouse_concepts.png" alt="Data Warehouse Concepts, Design, and Data Integration" loading="lazy"/>
             <div class="cert-badge-row">
               <span class="cert-cat-badge">Data</span>
               <span class="cert-verified">&#10003; VERIFIED</span>
@@ -1574,12 +1459,14 @@
             <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
           </div>
           <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Univ of Colorado / Coursera</div>
-              <div class="cert-title">Data Warehouse Concepts</div>
-              <div class="cert-meta">Nov 20, 2025</div>
+            <div class="cert-body-header">
+              <div class="cert-text-wrap">
+                <div class="cert-issuer">Univ of Colorado / Coursera</div>
+                <div class="cert-title">Data Warehouse Concepts</div>
+              </div>
+              <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            <div class="cert-meta">Nov 20, 2025</div>
           </div>
         </div>
 
