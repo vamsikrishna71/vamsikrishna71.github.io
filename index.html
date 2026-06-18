@@ -6,7 +6,7 @@
   <title>Vamsi Krishna V — Developer & Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       /* Deep black backgrounds */
@@ -22,7 +22,7 @@
       --muted: #8b8b8b;
       --heading-font: 'Bangers', cursive;
       --mono-font: 'JetBrains Mono', monospace;
-      --body-font: 'Fredoka One', cursive;
+      --body-font: 'Montserrat', sans-serif;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,6 +52,47 @@
       pointer-events: none;
       z-index: 999;
       opacity: 0.35;
+    }
+
+    /* ── COSMIC WAVE BACKGROUND ── */
+    .cosmic-wave {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cosmic-wave::before, .cosmic-wave::after {
+      content: '';
+      position: absolute;
+      width: 150vw;
+      height: 150vw;
+      top: -25%;
+      left: -25%;
+      background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                  conic-gradient(from 0deg, transparent, rgba(75, 0, 130, 0.2), transparent);
+      border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%;
+      animation: spinWave 25s linear infinite;
+      mix-blend-mode: screen;
+    }
+
+    .cosmic-wave::after {
+      background: radial-gradient(circle at 50% 50%, rgba(255, 0, 100, 0.08) 0%, transparent 60%);
+      animation-direction: reverse;
+      animation-duration: 35s;
+    }
+
+    body:hover .cosmic-wave {
+      opacity: 1;
+    }
+
+    @keyframes spinWave {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.15); }
+      100% { transform: rotate(360deg) scale(1); }
     }
 
     /* ── GRID LINES ── */
@@ -410,7 +451,7 @@
 
     .about-text p strong {
       color: var(--text);
-      font-weight: 400;
+      font-weight: 600;
     }
 
     .info-grid {
@@ -439,7 +480,7 @@
     .info-value {
       font-size: 0.9rem;
       color: var(--text);
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .skills-cloud {
@@ -745,7 +786,6 @@
     .cert-card:hover .cert-zoom{opacity:1}
     .cert-zoom svg{color:var(--accent);filter:drop-shadow(0 0 10px var(--accent))}
     
-    /* Updated Cert Body Layout */
     .cert-body{
       padding: 24px 20px;
       display: flex;
@@ -932,8 +972,8 @@
 </head>
 <body>
   <div class="grid-bg"></div>
+  <div class="cosmic-wave"></div>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">VK<span class="blink">_</span></div>
     <ul class="nav-links">
@@ -945,7 +985,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
@@ -975,7 +1014,7 @@
         <div class="stat-label">Years Exp.</div>
       </div>
       <div class="stat">
-        <div class="stat-num">10</div>
+        <div class="stat-num">11</div>
         <div class="stat-label">Certifications</div>
       </div>
       <div class="stat">
@@ -990,7 +1029,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-wrap">
       <div class="section-header">
@@ -1092,7 +1130,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-wrap">
       <div class="section-header">
@@ -1102,7 +1139,7 @@
       </div>
 
       <div class="timeline">
-        <div class="timeline-item visible">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">June 2024 — Present</div>
           <div class="timeline-company">Salt Player</div>
@@ -1120,7 +1157,7 @@
           </div>
         </div>
 
-        <div class="timeline-item visible">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">May 2021 — June 2022</div>
           <div class="timeline-company">SS4U Corp</div>
@@ -1142,7 +1179,7 @@
           </div>
         </div>
 
-        <div class="timeline-item visible">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">May 2019 — February 2020</div>
           <div class="timeline-company">Infiniti Software Solutions</div>
@@ -1166,7 +1203,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-wrap">
       <div class="section-header">
@@ -1176,7 +1212,7 @@
       </div>
 
       <div class="projects-grid">
-        <div class="project-card visible">
+        <div class="project-card">
           <div class="project-type">Open Source</div>
           <div class="project-name">Plex Meta Manager</div>
           <div class="project-desc">
@@ -1190,7 +1226,7 @@
           </div>
         </div>
 
-        <div class="project-card visible">
+        <div class="project-card">
           <div class="project-type">Technical Article</div>
           <div class="project-name">Python in Excel</div>
           <div class="project-desc">
@@ -1208,7 +1244,7 @@
           </a>
         </div>
 
-        <div class="project-card visible">
+        <div class="project-card">
           <div class="project-type">Technical Article</div>
           <div class="project-name">Laravel Eloquent</div>
           <div class="project-desc">
@@ -1225,11 +1261,28 @@
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
         </div>
+
+        <!-- <div class="project-card">
+          <div class="project-type">Frontend</div>
+          <div class="project-name">Frontend Adventures</div>
+          <div class="project-desc">
+            A personal frontend showcase hosted on Netlify, featuring experimental layouts,
+            UI components, and interactive web experiences.
+          </div>
+          <div class="timeline-tags" style="margin-bottom:20px">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="http://vamsikrishna.netlify.app" target="_blank" class="project-link">
+            Visit Site
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div> -->
       </div>
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-wrap">
       <div class="section-header">
@@ -1238,218 +1291,225 @@
         <div class="section-line"></div>
       </div>
 
-      <div class="cert-filters">
-        <button class="cf-btn active" data-cat="all">All (10)</button>
-        <button class="cf-btn" data-cat="data">Data & AI</button>
-        <button class="cf-btn" data-cat="ibm">IBM</button>
-        <button class="cf-btn" data-cat="coursera">Coursera</button>
-        <button class="cf-btn" data-cat="hackathon">Hackathon</button>
-        <button class="cf-btn" data-cat="other">Other</button>
+
+    <div class="cert-filters">
+      <button class="cf-btn active" data-cat="all">All (11)</button>
+      <button class="cf-btn" data-cat="ibm">IBM</button>
+      <button class="cf-btn" data-cat="coursera">Coursera</button>
+      <button class="cf-btn" data-cat="cloud">Cloud</button>
+      <button class="cf-btn" data-cat="data">Data</button>
+      <button class="cf-btn" data-cat="security">Security</button>
+    </div>
+    <div class="cert-grid" id="certGrid">
+
+      <div class="cert-card" data-cat="security coursera" data-title="Cyber Security Fundamentals" data-issuer="University of London · Coursera" data-date="Apr 5, 2023" data-verify="https://coursera.org/verify/B39KZA6L9AUK">
+        <div class="cert-img-wrap">
+          <img src="assets/Coursera B39KZA6L9AUK.png" alt="Cyber Security Fundamentals" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Security</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">University of London · Coursera</div>
+            <div class="cert-title">Cyber Security Fundamentals</div>
+            <div class="cert-meta">Apr 5, 2023</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
       </div>
 
-      <div class="cert-grid" id="certGrid">
-        
-        <!-- IBM DS0103EN: Data Science Methodology -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM | Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
-          <div class="cert-img-wrap">
-            <img src="assets/IBM_DSM-1.png" alt="IBM DS0103EN: Data Science Methodology" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      <div class="cert-card" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM | Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
+        <div class="cert-img-wrap">
+          <img src="assets/IBM_DSM-1.png" alt="IBM DS0103EN: Data Science Methodology" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
           </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM | Cognitive Class</div>
-              <div class="cert-title">IBM DS0103EN: Data Science Methodology</div>
-              <div class="cert-meta">Aug 25, 2023</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-
-        <!-- Fundamentals of Quantum Computing (LFQ101) -->
-        <div class="cert-card visible" data-cat="other" data-title="Fundamentals of Quantum Computing (LFQ101)" data-issuer="The Linux Foundation" data-date="March 05, 2023">
-          <div class="cert-img-wrap">
-            <img src="assets/fun_quantum.png" alt="Fundamentals of Quantum Computing (LFQ101)" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Other</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">IBM | Cognitive Class</div>
+            <div class="cert-title">IBM DS0103EN: Data Science Methodology</div>
+            <div class="cert-meta">Aug 25, 2023</div>
           </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">The Linux Foundation</div>
-              <div class="cert-title">Fundamentals of Quantum Computing</div>
-              <div class="cert-meta">Mar 05, 2023</div>
-            </div>
-            <img src="assets/linux_badge.png" class="cert-badge-icon" alt="Linux Foundation Badge"/>
-          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
         </div>
-
-        <!-- Smart India Hackathon 2018 - Hardware Edition -->
-        <div class="cert-card visible" data-cat="hackathon" data-title="Smart India Hackathon 2018 - Hardware Edition" data-issuer="MHRD / AICTE" data-date="June 18-22, 2018">
-          <div class="cert-img-wrap">
-            <img src="assets/smart_hc.png" alt="Smart India Hackathon 2018 - Hardware Edition" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Hackathon</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">MHRD / AICTE</div>
-              <div class="cert-title">Smart India Hackathon 2018</div>
-              <div class="cert-meta">Jun 18-22, 2018</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
-        <!-- Python for Data Science -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="Python for Data Science" data-issuer="IBM" data-date="August 20, 2023" data-verify="https://www.credly.com/go/3gFzMZxs">
-          <div class="cert-img-wrap">
-            <img src="assets/python_ds.png" alt="Python for Data Science" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM</div>
-              <div class="cert-title">Python for Data Science</div>
-              <div class="cert-meta">Aug 20, 2023</div>
-            </div>
-            <img src="assets/python_ds_badge.png" class="cert-badge-icon" alt="Python Data Science Badge"/>
-          </div>
-        </div>
-
-        <!-- IBM PY0101EN: Python 101 for Data Science -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="IBM PY0101EN: Python 101 for Data Science" data-issuer="IBM | Cognitive Class" data-date="August 20, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/0b74e4ca1ddc4264896d0a0e4d8c9679">
-          <div class="cert-img-wrap">
-            <img src="assets/IBM_DS-1.png" alt="IBM PY0101EN: Python 101 for Data Science" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM | Cognitive Class</div>
-              <div class="cert-title">IBM PY0101EN: Python 101</div>
-              <div class="cert-meta">Aug 20, 2023</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
-        <!-- Data Engineer Certificate -->
-        <div class="cert-card visible" data-cat="data" data-title="Data Engineer Certificate" data-issuer="Pro5.ai" data-date="April 2024">
-          <div class="cert-img-wrap">
-            <img src="assets/data_engineer_certificate.png" alt="Data Engineer Certificate" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Pro5.ai</div>
-              <div class="cert-title">Data Engineer Certificate</div>
-              <div class="cert-meta">Apr 2024</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
-        <!-- Data Science Methodologies -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="Data Science Methodologies" data-issuer="IBM" data-date="August 25, 2023" data-verify="https://www.credly.com/go/PYdULi43">
-          <div class="cert-img-wrap">
-            <img src="assets/data_science_certificate.png" alt="Data Science Methodologies" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM</div>
-              <div class="cert-title">Data Science Methodologies</div>
-              <div class="cert-meta">Aug 25, 2023</div>
-            </div>
-            <img src="assets/data-science-methodologies.png" class="cert-badge-icon" alt="Data Science Methodologies Badge"/>
-          </div>
-        </div>
-
-        <!-- Dashboard In A Day -->
-        <div class="cert-card visible" data-cat="data" data-title="Dashboard In A Day" data-issuer="Microsoft Power Platform / Koenig Solutions" data-date="July 25, 2024">
-          <div class="cert-img-wrap">
-            <img src="assets/dashboard_in_a_day.png" alt="Dashboard In A Day" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Microsoft / Koenig</div>
-              <div class="cert-title">Dashboard In A Day</div>
-              <div class="cert-meta">Jul 25, 2024</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
-        <!-- Machine Learning Capstone -->
-        <div class="cert-card visible" data-cat="data ibm coursera" data-title="Machine Learning Capstone" data-issuer="IBM / Coursera" data-date="December 23, 2023" data-verify="https://coursera.org/verify/SYZSNSGAZ4P3">
-          <div class="cert-img-wrap">
-            <img src="assets/machine_learning_capstone.png" alt="Machine Learning Capstone" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">IBM / Coursera</div>
-              <div class="cert-title">Machine Learning Capstone</div>
-              <div class="cert-meta">Dec 23, 2023</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
-        <!-- Data Warehouse Concepts, Design, and Data Integration -->
-        <div class="cert-card visible" data-cat="data coursera" data-title="Data Warehouse Concepts, Design, and Data Integration" data-issuer="University of Colorado / Coursera" data-date="November 20, 2025" data-verify="https://coursera.org/verify/RE2ZRM0IGB59">
-          <div class="cert-img-wrap">
-            <img src="assets/data_warehouse_concepts.png" alt="Data Warehouse Concepts, Design, and Data Integration" loading="lazy"/>
-            <div class="cert-badge-row">
-              <span class="cert-cat-badge">Data</span>
-              <span class="cert-verified">&#10003; VERIFIED</span>
-            </div>
-            <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-text-wrap">
-              <div class="cert-issuer">Univ of Colorado / Coursera</div>
-              <div class="cert-title">Data Warehouse Concepts</div>
-              <div class="cert-meta">Nov 20, 2025</div>
-            </div>
-            <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          </div>
-        </div>
-
       </div>
+
+      <div class="cert-card" data-cat="other" data-title="Fundamentals of Quantum Computing (LFQ101)" data-issuer="The Linux Foundation" data-date="March 05, 2023">
+        <div class="cert-img-wrap">
+          <img src="assets/fun_quantum.png" alt="Fundamentals of Quantum Computing (LFQ101)" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Other</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">The Linux Foundation</div>
+            <div class="cert-title">Fundamentals of Quantum Computing</div>
+            <div class="cert-meta">Mar 05, 2023</div>
+          </div>
+          <img src="assets/linux_badge.png" class="cert-badge-icon" alt="Linux Foundation Badge"/>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="hackathon" data-title="Smart India Hackathon 2018 - Hardware Edition" data-issuer="MHRD / AICTE" data-date="June 18-22, 2018">
+        <div class="cert-img-wrap">
+          <img src="assets/smart_hc.png" alt="Smart India Hackathon 2018 - Hardware Edition" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Hackathon</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">MHRD / AICTE</div>
+            <div class="cert-title">Smart India Hackathon 2018</div>
+            <div class="cert-meta">Jun 18-22, 2018</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data ibm" data-title="Python for Data Science" data-issuer="IBM" data-date="August 20, 2023" data-verify="https://www.credly.com/go/3gFzMZxs">
+        <div class="cert-img-wrap">
+          <img src="assets/python_ds.png" alt="Python for Data Science" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-title">Python for Data Science</div>
+            <div class="cert-meta">Aug 20, 2023</div>
+          </div>
+          <img src="assets/python_ds_badge.png" class="cert-badge-icon" alt="Python Data Science Badge"/>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data ibm" data-title="IBM PY0101EN: Python 101 for Data Science" data-issuer="IBM | Cognitive Class" data-date="August 20, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/0b74e4ca1ddc4264896d0a0e4d8c9679">
+        <div class="cert-img-wrap">
+          <img src="assets/IBM_DS-1.png" alt="IBM PY0101EN: Python 101 for Data Science" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">IBM | Cognitive Class</div>
+            <div class="cert-title">IBM PY0101EN: Python 101</div>
+            <div class="cert-meta">Aug 20, 2023</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data" data-title="Data Engineer Certificate" data-issuer="Pro5.ai" data-date="April 2024">
+        <div class="cert-img-wrap">
+          <img src="assets/data_engineer_certificate.png" alt="Data Engineer Certificate" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">Pro5.ai</div>
+            <div class="cert-title">Data Engineer Certificate</div>
+            <div class="cert-meta">Apr 2024</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data ibm" data-title="Data Science Methodologies" data-issuer="IBM" data-date="August 25, 2023" data-verify="https://www.credly.com/go/PYdULi43">
+        <div class="cert-img-wrap">
+          <img src="assets/data_science_certificate.png" alt="Data Science Methodologies" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-title">Data Science Methodologies</div>
+            <div class="cert-meta">Aug 25, 2023</div>
+          </div>
+          <img src="assets/data-science-methodologies.png" class="cert-badge-icon" alt="Data Science Methodologies Badge"/>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data" data-title="Dashboard In A Day" data-issuer="Microsoft Power Platform / Koenig Solutions" data-date="July 25, 2024">
+        <div class="cert-img-wrap">
+          <img src="assets/dashboard_in_a_day.png" alt="Dashboard In A Day" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">Microsoft / Koenig</div>
+            <div class="cert-title">Dashboard In A Day</div>
+            <div class="cert-meta">Jul 25, 2024</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data ibm coursera" data-title="Machine Learning Capstone" data-issuer="IBM / Coursera" data-date="December 23, 2023" data-verify="https://coursera.org/verify/SYZSNSGAZ4P3">
+        <div class="cert-img-wrap">
+          <img src="assets/machine_learning_capstone.png" alt="Machine Learning Capstone" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">IBM / Coursera</div>
+            <div class="cert-title">Machine Learning Capstone</div>
+            <div class="cert-meta">Dec 23, 2023</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
+      <div class="cert-card" data-cat="data coursera" data-title="Data Warehouse Concepts, Design, and Data Integration" data-issuer="University of Colorado / Coursera" data-date="November 20, 2025" data-verify="https://coursera.org/verify/RE2ZRM0IGB59">
+        <div class="cert-img-wrap">
+          <img src="assets/data_warehouse_concepts.png" alt="Data Warehouse Concepts, Design, and Data Integration" loading="lazy"/>
+          <div class="cert-badge-row">
+            <span class="cert-cat-badge">Data</span>
+            <span class="cert-verified">&#10003; VERIFIED</span>
+          </div>
+          <div class="cert-zoom"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-text-wrap">
+            <div class="cert-issuer">Univ of Colorado / Coursera</div>
+            <div class="cert-title">Data Warehouse Concepts</div>
+            <div class="cert-meta">Nov 20, 2025</div>
+          </div>
+          <svg class="cert-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 3.09h4.36v4.36L22.54 12l-3.09 3.09v4.36h-4.36L12 22l-3.09-3.09H4.54v-4.36L1.46 12l3.08-3.09V4.54h4.36L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-wrap">
       <div class="section-header">
@@ -1476,13 +1536,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">VK<span class="blink">_</span></div>
     <div class="footer-text">Designed & Built by Vamsi Krishna V</div>
   </footer>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lb-inner">
       <div class="lb-bar">
@@ -1501,8 +1559,25 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
+  <audio id="om-audio" loop src="assets/om-soundscape.mp3"></audio>
+
   <script>
+    // Audio Autoplay logic (Requires interaction due to browser policies)
+    const omAudio = document.getElementById('om-audio');
+    omAudio.volume = 0.15; // Set low volume
+    
+    document.body.addEventListener('mouseenter', () => {
+      // Catch prevents console errors if browser strict-blocks without a click
+      omAudio.play().catch(e => console.warn("Audio autoplay blocked by browser policy. Interaction needed."));
+    }, { once: true }); // Only try to trigger once on mouse enter
+
+    document.body.addEventListener('click', () => {
+       if(omAudio.paused) {
+         omAudio.play().catch(e => console.warn(e));
+       }
+    }, { once: true });
+
+
     // Filtering Logic
     const filterBtns = document.querySelectorAll('.cf-btn');
     const certCards = document.querySelectorAll('.cert-card');
