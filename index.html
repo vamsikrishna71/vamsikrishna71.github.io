@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vamsi Krishna V — Developer & Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #080c14;
@@ -17,9 +17,9 @@
       --accent3: #ff5f7e;
       --text: #e8edf5;
       --muted: #6b7fa3;
-      --heading-font: 'Syne', sans-serif;
+      --heading-font: 'Inter', sans-serif;
       --mono-font: 'DM Mono', monospace;
-      --body-font: 'DM Sans', sans-serif;
+      --body-font: 'Inter', sans-serif;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -84,6 +84,7 @@
       color: var(--accent);
       letter-spacing: 0.15em;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .nav-links {
@@ -633,12 +634,17 @@
     }
 
     .project-type {
+      display: inline-block;
       font-family: var(--mono-font);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--accent);
-      letter-spacing: 0.2em;
+      background: rgba(0, 255, 210, 0.08);
+      border: 1px solid rgba(0, 255, 210, 0.3);
+      padding: 4px 12px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      border-radius: 20px;
     }
 
     .project-name {
@@ -875,7 +881,6 @@
 <body>
   <div class="grid-bg"></div>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">VK<span class="blink">_</span></div>
     <ul class="nav-links">
@@ -887,7 +892,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
@@ -932,7 +936,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-wrap">
       <div class="section-header">
@@ -1034,7 +1037,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-wrap">
       <div class="section-header">
@@ -1108,7 +1110,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-wrap">
       <div class="section-header">
@@ -1167,29 +1168,10 @@
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
         </div>
-
-        <!-- <div class="project-card visible">
-          <div class="project-type">Frontend</div>
-          <div class="project-name">Frontend Adventures</div>
-          <div class="project-desc">
-            A personal frontend showcase hosted on Netlify, featuring experimental layouts,
-            UI components, and interactive web experiences.
-          </div>
-          <div class="timeline-tags" style="margin-bottom:20px">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Netlify</span>
-          </div>
-          <a href="http://vamsikrishna.netlify.app" target="_blank" class="project-link">
-            Visit Site
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-        </div> -->
       </div>
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-wrap">
       <div class="section-header">
@@ -1209,8 +1191,7 @@
 
       <div class="cert-grid" id="certGrid">
         
-        <!-- IBM DS0103EN: Data Science Methodology -->
-        <div class="cert-card visible" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM / Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
+        <div class="cert-card visible" data-cat="data ibm" data-title="IBM DS0103EN: Data Science Methodology" data-issuer="IBM | Cognitive Class" data-date="August 25, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/56e1e52d11a1429fa769838244ff0d48">
           <div class="cert-img-wrap">
             <img src="assets/IBM_DSM-1.png" alt="IBM DS0103EN: Data Science Methodology" loading="lazy"/>
             <div class="cert-badge-row">
@@ -1226,7 +1207,6 @@
           </div>
         </div>
 
-        <!-- Fundamentals of Quantum Computing (LFQ101) -->
         <div class="cert-card visible" data-cat="other" data-title="Fundamentals of Quantum Computing (LFQ101)" data-issuer="The Linux Foundation" data-date="March 05, 2023">
           <div class="cert-img-wrap">
             <img src="assets/fun_quantum.png" alt="Fundamentals of Quantum Computing (LFQ101)" loading="lazy"/>
@@ -1242,7 +1222,6 @@
           </div>
         </div>
 
-        <!-- Smart India Hackathon 2018 - Hardware Edition -->
         <div class="cert-card visible" data-cat="hackathon" data-title="Smart India Hackathon 2018 - Hardware Edition" data-issuer="MHRD / AICTE" data-date="June 18-22, 2018">
           <div class="cert-img-wrap">
             <img src="assets/smart_hc.png" alt="Smart India Hackathon 2018 - Hardware Edition" loading="lazy"/>
@@ -1258,7 +1237,6 @@
           </div>
         </div>
 
-        <!-- Python for Data Science -->
         <div class="cert-card visible" data-cat="data ibm" data-title="Python for Data Science" data-issuer="IBM" data-date="August 20, 2023" data-verify="https://www.credly.com/go/3gFzMZxs">
           <div class="cert-img-wrap">
             <img src="assets/python_ds.png" alt="Python for Data Science" loading="lazy"/>
@@ -1275,7 +1253,6 @@
           </div>
         </div>
 
-        <!-- IBM PY0101EN: Python 101 for Data Science -->
         <div class="cert-card visible" data-cat="data ibm" data-title="IBM PY0101EN: Python 101 for Data Science" data-issuer="IBM / Cognitive Class" data-date="August 20, 2023" data-verify="https://courses.cognitiveclass.ai/certificates/0b74e4ca1ddc4264896d0a0e4d8c9679">
           <div class="cert-img-wrap">
             <img src="assets/IBM_DS-1.png" alt="IBM PY0101EN: Python 101 for Data Science" loading="lazy"/>
@@ -1292,7 +1269,6 @@
           </div>
         </div>
 
-        <!-- Data Engineer Certificate -->
         <div class="cert-card visible" data-cat="data" data-title="Data Engineer Certificate" data-issuer="Pro5.ai" data-date="April 2024">
           <div class="cert-img-wrap">
             <img src="assets/data_engineer_certificate.png" alt="Data Engineer Certificate" loading="lazy"/>
@@ -1308,7 +1284,6 @@
           </div>
         </div>
 
-        <!-- Data Science Methodologies -->
         <div class="cert-card visible" data-cat="data ibm" data-title="Data Science Methodologies" data-issuer="IBM" data-date="August 25, 2023" data-verify="https://www.credly.com/go/PYdULi43">
           <div class="cert-img-wrap">
             <img src="assets/data_science_certificate.png" alt="Data Science Methodologies" loading="lazy"/>
@@ -1325,7 +1300,6 @@
           </div>
         </div>
 
-        <!-- Dashboard In A Day -->
         <div class="cert-card visible" data-cat="data" data-title="Dashboard In A Day" data-issuer="Microsoft Power Platform / Koenig Solutions" data-date="July 25, 2024">
           <div class="cert-img-wrap">
             <img src="assets/dashboard_in_a_day.png" alt="Dashboard In A Day" loading="lazy"/>
@@ -1341,7 +1315,6 @@
           </div>
         </div>
 
-        <!-- Machine Learning Capstone -->
         <div class="cert-card visible" data-cat="data ibm coursera" data-title="Machine Learning Capstone" data-issuer="IBM / Coursera" data-date="December 23, 2023" data-verify="https://coursera.org/verify/SYZSNSGAZ4P3">
           <div class="cert-img-wrap">
             <img src="assets/machine_learning_capstone.png" alt="Machine Learning Capstone" loading="lazy"/>
@@ -1358,7 +1331,6 @@
           </div>
         </div>
 
-        <!-- Data Warehouse Concepts, Design, and Data Integration -->
         <div class="cert-card visible" data-cat="data coursera" data-title="Data Warehouse Concepts, Design, and Data Integration" data-issuer="University of Colorado / Coursera" data-date="November 20, 2025" data-verify="https://coursera.org/verify/RE2ZRM0IGB59">
           <div class="cert-img-wrap">
             <img src="assets/data_warehouse_concepts.png" alt="Data Warehouse Concepts, Design, and Data Integration" loading="lazy"/>
@@ -1379,7 +1351,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-wrap">
       <div class="section-header">
@@ -1406,13 +1377,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">VK<span class="blink">_</span></div>
     <div class="footer-text">Designed & Built by Vamsi Krishna V</div>
   </footer>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lb-inner">
       <div class="lb-bar">
@@ -1431,7 +1400,6 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
     // Filtering Logic
     const filterBtns = document.querySelectorAll('.cf-btn');
